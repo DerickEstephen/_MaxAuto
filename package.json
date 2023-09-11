@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "tailwindcss -i css/input.css -o css/style.css --watch",
+    "build": "tailwindcss build css/input.css -o css/style.css"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "tailwindcss": "^3.3.3"
+  }
+}
