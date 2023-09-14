@@ -146,7 +146,7 @@
 
 <section>
   <div class="container py-16">
-    <h3 class="text-[4vw] text-db font-semibold mb-10 text-center"><span class="text-dy">Auto</span> Store</h3>
+    <h3 class="text-[4vw] leading-tight text-db font-semibold mb-12 text-center"><span class="text-dy">Auto</span> Store</h3>
     <div class="swiper autostore-slider overflow-y-visible">
 
       <div class="swiper-wrapper pb-20">
@@ -194,6 +194,146 @@
 
 
 
+</section>
+
+
+<section class="bg-gray-50">
+  <div class="container py-16">
+    <h3 class="text-[4vw] leading-tight text-db font-semibold mb-12 text-center">Our <span class="text-dy">Services</span></h3>
+    <div class="grid grid-cols-3 gap-5">
+      <div class="flex flex-col items-center rounded border shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] group hover:bg-db px-6 py-8">
+        <div class="bg-dy w-14 h-14 rounded-full flex justify-center items-center text-2xl mb-2">
+          <i class="fa-solid fa-car-side text-db"></i>
+        </div>
+        <h3 class="text-2xl font-medium mb-4 group-hover:text-white">Car Selling</h3>
+        <div class="flex flex-col gap-5 mb-6">
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>Post your Ad in 3 Easy Steps</p>
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>Sell your Car Fast at the Best Price</p>
+        </div>
+        <a href="ad form for car.php" target="blank" class="text-center text-db bg-ly rounded px-6 py-2 font-medium hover:bg-dy"> Read More</a>
+      </div>
+
+      <div class="flex flex-col items-center rounded border shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] group hover:bg-db px-6 py-8">
+        <div class="bg-dy w-14 h-14 rounded-full flex justify-center items-center text-2xl mb-2">
+          <i class="fa-solid fa-car-rear text-db"></i>
+        </div>
+        <h3 class="text-2xl font-medium mb-4 group-hover:text-white">Car Inspection</h3>
+        <div class="flex flex-col gap-5 mb-6">
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>Complete Vehical Inspection</p>
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>Qualified Mechanics and Technicians</p>
+        </div>
+        <a href="ad form for car.php" target="blank" class="text-center text-db bg-ly rounded px-6 py-2 font-medium hover:bg-dy"> Read More</a>
+      </div>
+
+      <div class="flex flex-col items-center rounded border shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] group hover:bg-db px-6 py-8">
+        <div class="bg-dy w-14 h-14 rounded-full flex justify-center items-center text-2xl mb-2">
+          <i class="fa-solid fa-car-rear text-db"></i>
+        </div>
+        <h3 class="text-2xl font-medium mb-4 group-hover:text-white">Car Delivery</h3>
+        <div class="flex flex-col gap-5 mb-6">
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>To your Doorsteps or Pick-up Point</p>
+          <p class="flex items-center gap-2 text-gray-500 group-hover:text-white text-sm"><span class="fa-solid fa-circle-check text-green-600"></span>Unbeatable Price</p>
+        </div>
+        <a href="ad form for car.php" target="blank" class="text-center text-db bg-ly rounded px-6 py-2 font-medium hover:bg-dy"> Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container py-16">
+    <h3 class="text-[4vw] leading-tight text-db font-semibold mb-12 text-center"><span class="text-dy">Contact</span> Us</h3>
+    <form method="post" class="flex flex-col items-center gap-4 w-2/4 mx-auto">
+      <?php
+      if (isset($_SESSION['token'])) {
+        $token = $_SESSION['token'];
+        $selectquery = "SELECT * FROM registration WHERE token = '$token'";
+        $runquery = mysqli_query($con, $selectquery);
+
+
+        while ($result = mysqli_fetch_array($runquery)) { ?>
+          <input type="text" name="username" placeholder="Enter Your Name" value="<?php echo $result['username'] ?>" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full">
+          <input type="email" name="email" placeholder="Enter Your Email" value="<?php echo $result['email'] ?>" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full" style="text-transform: none;">
+          <input type="text" name="subject" placeholder="subject" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full">
+          <textarea name="msg" placeholder="Your Message" class="mb-5 border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full" cols="30" rows="10" style="text-transform: none;"></textarea>
+          <input type="submit" name="submit" value="Send Message" class="cursor-pointer text-center text-db bg-ly rounded px-6 py-2 font-medium hover:bg-dy">
+        <?php
+        }
+      } else { ?>
+        <input type="text" name="username" placeholder="Enter Your Name" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full">
+        <input type="email" name="email" placeholder="Enter Your Email" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full" style="text-transform: none;">
+        <input type="text" name="subject" placeholder="subject" class="border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full">
+        <textarea name="msg" placeholder="Your Message" class="mb-5 border outline-none focus:border-dy px-3 py-2 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] w-full" cols="30" rows="10" style="text-transform: none;"></textarea>
+        <input type="submit" name="submit" value="Send Message" class="cursor-pointer text-center text-db bg-ly rounded px-6 py-2 font-medium hover:bg-dy">
+      <?php
+      }
+      ?>
+    </form>
+  </div>
+</section>
+
+<section class="bg-[url('img/newsletter-bg.png')] bg-cover bg-center">
+  <div class="container py-16 flex flex-col items-center justify-center">
+    <h3 class="font-medium text-3xl mb-3">Subscribe for Latest Updates</h3>
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+      <div class="flex">
+        <input type="email" name="email" placeholder="Enter your email" class="w-[450px] border border-r-0 rounded-tl-full rounded-bl-full focus:border-dy outline-none  px-6 py-3">
+        <input type="submit" name="subscribe" value="Subscribe" class="font-medium cursor-pointer bg-ly border border-ly hover:border-dy hover:bg-dy rounded-tr-full rounded-br-full px-6 py-3">
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="bg-ly">
+  <div class="container py-16 border-b border-db">
+
+    <div class="grid grid-cols-4 gap-5">
+      <div class="flex flex-col">
+        <h3 class="text-db text-2xl font-semibold mb-3">Our Branches</h3>
+        <div class="flex flex-col gap-3">
+          <a href="" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-map-marker-alt"></i> Rawalpindi </a>
+          <a href="" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-map-marker-alt"></i> Islamabad </a>
+          <a href="" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-map-marker-alt"></i> Lahore </a>
+          <a href="" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-map-marker-alt"></i> Karachi </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="text-db text-2xl font-semibold mb-3">Quick Links</h3>
+        <div class="flex flex-col gap-3">
+          <a href="index.php" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> Home </a>
+          <a href="find new car.php" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> New Cars </a>
+          <a href="find used car.php" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> Used Cars </a>
+          <a href="maxauto store.php" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> Auto Parts </a>
+          <a href="#services" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> Services </a>
+          <a href="#contact" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-arrow-right"></i> Contact </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="text-db text-2xl font-semibold mb-3">Contact Info</h3>
+        <div class="flex flex-col gap-3">
+          <a href="#" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+          <a href="#" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+          <a href="#" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-envelope"></i> info@maxauto.com </a>
+          <a href="#" class="flex items-center gap-2 hover:gap-4"> <i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan - 46200 </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <h3 class="text-db text-2xl font-semibold mb-3">Social Media</h3>
+        <div class="flex gap-3">
+          <a href="https://web.facebook.com/?_rdc=1&_rdr" class="flex items-center gap-2 hover:gap-4" target="blank"> 
+            <i class="fab fa-facebook-f"></i> 
+          </a>
+          <a href="https://www.youtube.com" class="flex items-center gap-2 hover:gap-4" target="blank"> <i class="fab fa-youtube"></i> </a>
+          <a href="https://www.twitter.com" class="flex items-center gap-2 hover:gap-4" target="blank"> <i class="fab fa-twitter"></i>  </a>
+          <a href="https://www.instagram.com" class="flex items-center gap-2 hover:gap-4" target="blank"> <i class="fab fa-instagram"></i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="py-6 text-sm text-center">&copy; 2023, All Rights Reserved - Design and Developed by Derick Estephen</p>
 </section>
 
 
