@@ -58,9 +58,9 @@ $domain = "http://localhost/Web_Projects/MaxAuto/"
                     <li><a href="" class="text-lg hover:text-dy">services</a></li>
                     <li><a href="" class="text-lg hover:text-dy">contact</a></li>
                 </ul>
-                <a href="#" class="flex gap-3 items-center bg-ly rounded px-6 py-2 font-medium  hover:bg-dy">
+                <a href="login" class="flex gap-3 items-center bg-ly rounded px-6 py-2 font-medium  hover:bg-dy">
                     <i class="far fa-user"></i>
-                    Sign in
+                    Login
                 </a>
             </div>
         </div>

@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^login?$ login.php
+
+
+RewriteRule ^page/([0-9a-zA-Z_-]+) _page.php?name=$1
