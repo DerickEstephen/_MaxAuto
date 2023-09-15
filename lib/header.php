@@ -1,7 +1,7 @@
 <?php
 require "lib/dbconfig.php";
 
-$domain = "http://localhost/Web_Projects/MaxAuto/"
+$domain = "http://localhost/Web_Projects/_MaxAuto/"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@ $domain = "http://localhost/Web_Projects/MaxAuto/"
             <div class="flex justify-between items-center">
                 <a href="<?php echo $domain ?>" class="text-db font-bold text-3xl"> <span class="text-dy">Max</span>Auto </a>
                 <ul class="flex items-center capitalize font-medium gap-6">
-                    <li><a href="" class="text-lg hover:text-dy">home</a></li>
+                    <li><a href="<?php echo $domain ?>" class="text-lg hover:text-dy">home</a></li>
                     <li><a href="" class="text-lg hover:text-dy">about</a></li>
                     <li><a href="" class="text-lg hover:text-dy">services</a></li>
                     <li><a href="" class="text-lg hover:text-dy">contact</a></li>
